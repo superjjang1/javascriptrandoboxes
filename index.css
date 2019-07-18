@@ -1,0 +1,63 @@
+:root {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    width: 97vw;
+    margin: 0 auto;
+}
+
+.form-container {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width:100vw;
+}
+.form-container input form {
+    font-size: inherit;
+    width: 85px;
+}
+input {
+    border: 1px solid black;
+}
+.box-container {
+    position: relative;
+    height: 400px;
+    width: 600px;
+    border: 1px solid #ddd;
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.box {
+    height: 50px;
+    width: 50px;
+    border: 1px solid rgba(50,50,50,.8);
+    box-shadow: 2px 2px 3px rgba(0,0,0,.5);
+    padding: 10px;
+    margin: 10px;
+    position: absolute;
+    background-color: lavender;
+}
+button {
+    border: 1px solid black;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    border: 1px solid black;
+}
+.dropdown-content:hover {
+    display: none;
+    position: absolute;
+    background-color: grey;
+    z-index: 1;
+    border: 1px solid black;
+}
+.dropdown:hover .dropdown-content {
+    display:inline-block;
+}
