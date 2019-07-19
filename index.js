@@ -18,19 +18,33 @@ butt.addEventListener('click', (e) => {
     el.classList.add('box');
     boxContainer.appendChild(el);
     console.log(el);
-    el.style.top=`${xIn.value}px`;
-    el.style.left=`${yIn.value}px`;
-    const colorpick = document.getElementById('color');
+    el.style.left=`${xIn.value}px`;
+    el.style.bottom=`${yIn.value}px`;
+    const colorpick = document.getElementById('colors');
     console.log(colorpick);
 
-    if (`${xIn.value}` >= 338 || `${yIn.value}` >= 538) {
+    if (`${xIn.value}` >= 538 || `${yIn.value}` >= 338) {
         alert("no");
         el.style.backgroundColor = 'red';
     } else {
         el.classList.add('box');
         boxContainer.appendChild(el);
-        el.style.backgroundColor = colorpick;
+        el.style.backgroundColor = colorpick.value;
+        const clicky = document.querySelector('.box');
+        clicky.addEventListener('click', (e) => {
+            e.target.remove();
+        });
+        let colorRan = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'];
+        let colorStr = '#';
+        for(colorIndex = 0; colorIndex <6; colorIndex++){
+            colorStr += colorRan[Math.floor(Math.random()*16)];
+        el.style.backgroundColor=colorStr;
+        }
     };
+    el.addEventListener('mouseover',(e) => {
+        el.style.bottom= Math.floor(Math.random()*338) +1 +'px'
+        el.style.right = Math.floor(Math.random()*538) +1 +'px'
+    });
 });
 
 // e.target.remove();
